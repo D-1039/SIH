@@ -1,0 +1,11 @@
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Other common ignores
+*.log
+.DS_Store  # Optional, for macOS users
+*.env      # Environment variables
