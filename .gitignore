@@ -9,3 +9,6 @@ __pycache__/
 *.log
 .DS_Store  # Optional, for macOS users
 *.env      # Environment variables
+node_modules/
+mongo/data/
+mongo/logs/
