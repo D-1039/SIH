@@ -1,13 +1,17 @@
 const express = require('express');
-const { connectDB, mongoose } = require('./src/config/db');
 const attendanceRoutes = require('./src/routes/attendanceRoutes');
+const authRoutes = require('./src/routes/authRoutes');
+const errorMiddleware = require('./src/middleware/errorMiddleware');
+const cors = require('cors');
 
 const app = express();
 
-// Connect to MongoDB
-connectDB();
-
 app.use(express.json());
-app.use('/api/attendance', attendanceRoutes);
+app.use(cors({ origin: 'http://localhost:3001' })); // Allow frontend
 
-module.exports = app;
+app.use('/api/attendance', attendanceRoutes);
+app.use('/api/auth', authRoutes);
+
+app.use(errorMiddleware);
+
+module.exports = app; // Export the configured app
