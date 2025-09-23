@@ -14,4 +14,4 @@ mongo/data/
 mongo/logs/
 *.txt
 redundancy-report.json
-errors-summary.json
+error-summary.json
